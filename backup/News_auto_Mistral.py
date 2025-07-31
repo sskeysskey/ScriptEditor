@@ -11,7 +11,7 @@ from datetime import datetime
 
 def capture_screen():
     # 定义截图路径
-    screenshot_path = '/Users/yanzhang/Documents/python_code/Resource/screenshot.png'
+    screenshot_path = '/Users/yanzhang/Coding/python_code/Resource/screenshot.png'
     # 使用pyautogui截图并直接保存
     pyautogui.screenshot(screenshot_path)
     # 读取刚才保存的截图文件
@@ -130,9 +130,9 @@ def main():
     html_skeleton_created = False
     html_file_path = ''  # 用空字符串初始化
     try:
-        template_path_stop = '/Users/yanzhang/Documents/python_code/Resource/poe_stop.png'
-        template_path_waiting = '/Users/yanzhang/Documents/python_code/Resource/poe_stillwaiting.png'
-        template_path_success = '/Users/yanzhang/Documents/python_code/Resource/poe_copy_success.png'
+        template_path_stop = '/Users/yanzhang/Coding/python_code/Resource/poe_stop.png'
+        template_path_waiting = '/Users/yanzhang/Coding/python_code/Resource/poe_stillwaiting.png'
+        template_path_success = '/Users/yanzhang/Coding/python_code/Resource/poe_copy_success.png'
         while True:
             location, shape = find_image_on_screen(template_path_stop)
             if location:
@@ -155,7 +155,7 @@ def main():
                 sleep(3)  # 简短暂停再次监控
             else:
                 sleep(4)  # 简短暂停再次监控
-                script_path = '/Users/yanzhang/Documents/ScriptEditor/click_copy_news.scpt'
+                script_path = '/Users/yanzhang/Coding/ScriptEditor/click_copy_news.scpt'
                 try:
                     # 运行AppleScript文件
                     process = subprocess.run(['osascript', script_path], check=True, text=True, stdout=subprocess.PIPE)
@@ -178,7 +178,7 @@ def main():
 
                 if not found_success_image:
                     print("在5秒内未找到poe_copy_success图片，退出程序。")
-                    screenshot_path = '/Users/yanzhang/Documents/python_code/Resource/screenshot.png'
+                    screenshot_path = '/Users/yanzhang/Coding/python_code/Resource/screenshot.png'
                     if os.path.exists(screenshot_path):
                         os.remove(screenshot_path)
                         print("截图文件已删除。")
@@ -217,7 +217,7 @@ def main():
                 final_content = segment_content + '\n' + site_content_with_tags + '\n\n' + modified_content
 
                 # 设置txt文件的保存目录
-                txt_directory = '/Users/yanzhang/Documents/News'
+                txt_directory = '/Users/yanzhang/Coding/News'
                 
                 # 设置TXT文件的保存路径
                 now = datetime.now()
@@ -246,7 +246,7 @@ def main():
 
                 # 根据segment内容获取对应的HTML文件名
                 html_file_name = segment_to_html_file.get(segment_content.lower(), "other.html")
-                html_file_path = os.path.join('/Users/yanzhang/Documents/sskeysskey.github.io/news', html_file_name)
+                html_file_path = os.path.join('/Users/yanzhang/Coding/sskeysskey.github.io/news', html_file_name)
 
                 # 根据segment内容获取对应的标题
                 title = segment_content if segment_content.lower() in segment_to_html_file else "新闻摘要"
@@ -267,7 +267,7 @@ def main():
         if html_skeleton_created and not os.path.isfile(html_file_path):
             close_html_skeleton(html_file_path)
 
-        screenshot_path = '/Users/yanzhang/Documents/python_code/Resource/screenshot.png'
+        screenshot_path = '/Users/yanzhang/Coding/python_code/Resource/screenshot.png'
         if os.path.exists(screenshot_path):
             os.remove(screenshot_path)
             print("截图文件已删除。")

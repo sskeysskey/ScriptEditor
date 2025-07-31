@@ -36,8 +36,8 @@ def click_image(location, shape):
 
 # 主函数
 def main():
-        template_path1 = '/Users/yanzhang/Documents/python_code/Resource/claude_new_chat.png'
-        template_path2 = '/Users/yanzhang/Documents/python_code/Resource/claude_message.png'
+        template_path1 = '/Users/yanzhang/Coding/python_code/Resource/claude_new_chat.png'
+        template_path2 = '/Users/yanzhang/Coding/python_code/Resource/claude_message.png'
         found1 = False  # 初始化一个标志变量
         while not found1:  # 使用标志变量作为循环条件
             location, shape = find_image_on_screen(template_path1)
